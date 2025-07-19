@@ -77,9 +77,8 @@
     <li onclick="showFunction(3)">Chức năng 3: Buff dpi</li>
     <li onclick="showFunction(4)">Chức năng 4: Tâm ảo ẩn</li>
     <li onclick="showFunction(5)">Chức năng 5: Buff nhạy</li>
-    <li onclick="showFunction(6)">Chức năng 6: Dpi config bấm vào chức năng 7</li>
-    <li onclick="showFunction(7)">Chức năng 7: https://www.mediafire.com/file/lbwpcpg4aiwuzir/Dpi+config+demo.mobileconfig/file</li>
-    <li onclick="showFunction(10)">Chức năng 10: Đăng xuất</li>
+    <li onclick="showFunction(6)">Chức năng 6: Dpi config</li>
+                          Đăng xuất  
   </ul>
 </div>
 
@@ -102,6 +101,9 @@
     if (id === 10) {
       // Đăng xuất
       location.reload();
+    } else if (id === 6) {
+      // Chuyển đến link tải DPI config
+      window.location.href = "https://www.mediafire.com/file/lbwpcpg4aiwuzir/Dpi+config+demo.mobileconfig/file";
     } else {
       alert("Bạn đã chọn chức năng số " + id);
     }

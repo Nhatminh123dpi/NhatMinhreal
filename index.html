@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trang chính</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+    .login-container, .main-container {
+      width: 300px;
+      margin: 100px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    .menu {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+    .menu li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .menu li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="login" class="login-container">
+  <h2>Đăng nhập</h2>
+  <input type="text" id="username" placeholder="Tên đăng nhập" />
+  <input type="password" id="password" placeholder="Mật khẩu" />
+  <button onclick="login()">Đăng nhập</button>
+  <p id="login-error" style="color:red;"></p>
+</div>
+
+<div id="main" class="main-container" style="display:none;">
+  <h2>Chào mừng bạn!</h2>
+  <p>Chọn một chức năng:</p>
+</div>
+
+<div id="menu" class="menu" style="display:none;">
+  <ul>
+    <li onclick="showFunction(1)">Chức năng 1: Quản lý người dùng</li>
+    <li onclick="showFunction(2)">Chức năng 2: Thêm sản phẩm</li>
+    <li onclick="showFunction(3)">Chức năng 3: Xem báo cáo</li>
+    <li onclick="showFunction(4)">Chức năng 4: Gửi thông báo</li>
+    <li onclick="showFunction(5)">Chức năng 5: Đổi mật khẩu</li>
+    <li onclick="showFunction(6)">Chức năng 6: Thống kê doanh thu</li>
+    <li onclick="showFunction(7)">Chức năng 7: Quản lý đơn hàng</li>
+    <li onclick="showFunction(8)">Chức năng 8: Hỗ trợ khách hàng</li>
+    <li onclick="showFunction(9)">Chức năng 9: Cài đặt hệ thống</li>
+    <li onclick="showFunction(10)">Chức năng 10: Đăng xuất</li>
+  </ul>
+</div>
+
+<script>
+  function login() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    // Kiểm tra tài khoản mẫu: admin / 123
+    if (username === "admin" && password === "123") {
+      document.getElementById('login').style.display = "none";
+      document.getElementById('main').style.display = "block";
+      document.getElementById('menu').style.display = "block";
+    } else {
+      document.getElementById('login-error').innerText = "Sai tên đăng nhập hoặc mật khẩu!";
+    }
+  }
+
+  function showFunction(id) {
+    if (id === 10) {
+      // Đăng xuất
+      location.reload();
+    } else {
+      alert("Bạn đã chọn chức năng số " + id);
+    }
+  }
+</script>
+
+</body>
+</html>
